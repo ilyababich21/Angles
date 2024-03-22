@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Angles"
 include(":app")
- 
+include(":bt_def")
