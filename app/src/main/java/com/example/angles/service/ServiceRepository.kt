@@ -12,7 +12,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.angles.model.Orientation
 
-class ServiceRepository(application: Application): SensorEventListener {
+class ServiceRepository(application: Application,private var listener:Listener): SensorEventListener {
 
     private var isCon:MutableLiveData<String> = MutableLiveData("not Connect")
     private var orientation:MutableLiveData<Orientation> = MutableLiveData(Orientation(pitch = 0.0, roll = 0.0, yaw = 0.0))
@@ -82,9 +82,17 @@ class ServiceRepository(application: Application): SensorEventListener {
         // "rotationMatrix" now has up-to-date information.
 
         SensorManager.getOrientation(rotationMatrix, orientationAngles)
-        Log.d("MyLog",(orientationAngles[0]*57.2958).toString()+"     " + (orientationAngles[1]*57.2958).toString()+"     "+(orientationAngles[2]*57.2958).toString())
+//        Log.d("MyLogDog",(orientationAngles[0]*57.2958).toString()+"     " + (orientationAngles[1]*57.2958).toString()+"     "+(orientationAngles[2]*57.2958).toString())
+
+
+        listener.changeOrient(Orientation(yaw=orientationAngles[0]*57.2958,roll = orientationAngles[1]*57.2958, pitch = orientationAngles[2]*57.2958))
         orientation.postValue(Orientation(yaw=orientationAngles[0]*57.2958,roll = orientationAngles[1]*57.2958, pitch = orientationAngles[2]*57.2958))
         // "orientationAngles" now has up-to-date information.
+    }
+
+
+    interface Listener{
+        fun changeOrient(orientation: Orientation)
     }
 
 }

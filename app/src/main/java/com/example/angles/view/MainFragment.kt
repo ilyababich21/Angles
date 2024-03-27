@@ -44,6 +44,7 @@ class MainFragment : Fragment() {
             binding.rollValue.text = String.format("%.2f", it.roll)
             binding.yawValue.text = String.format("%.2f", it.yaw)
         } })
+//        binding.conBtn
 
     }
 
