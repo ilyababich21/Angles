@@ -3,8 +3,7 @@ package com.example.angles.service
 import android.app.Application
 import android.bluetooth.BluetoothManager
 import android.content.Context
-import androidx.core.content.getSystemService
-import androidx.lifecycle.LiveData
+
 import com.example.angles.model.Orientation
 
 class BluetoothRepository(application: Application) {
