@@ -43,8 +43,8 @@ class MainFragment : Fragment() {
 
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = MainFragment()
-    }
+//    companion object {
+//        @JvmStatic
+//        fun newInstance() = MainFragment()
+//    }
 }

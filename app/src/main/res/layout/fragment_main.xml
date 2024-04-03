@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/black"
-            android:text="Connect"
+            android:text="@string/connect"
             android:textAppearance="@style/TextAppearance.AppCompat.Display3"
             android:textColor="#25810F" />
 
@@ -42,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Pitch:"
+                        android:text="@string/pitch"
                         android:textSize="34sp" />
 
                     <TextView
@@ -50,7 +50,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        android:text="@string/textview"
                         android:textSize="34sp" />
                 </LinearLayout>
 
@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Roll:"
+                        android:text="@string/roll"
                         android:textSize="34sp" />
 
                     <TextView
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        android:text="@string/textview"
                         android:textSize="34sp" />
                 </LinearLayout>
 
@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Yaw:"
+                        android:text="@string/yaw"
                         android:textSize="34sp" />
 
                     <TextView
@@ -96,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        android:text="@string/textview"
                         android:textSize="34sp" />
                 </LinearLayout>
 
@@ -111,7 +111,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Alt:"
+                        android:text="@string/alt"
                         android:textSize="34sp" />
 
                     <TextView
@@ -119,7 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        android:text="@string/textview"
                         android:textSize="34sp" />
                 </LinearLayout>
 

@@ -52,12 +52,12 @@ class AcceptThread(bluetoothAdapter: BluetoothAdapter?) : Thread() {
     }
 
 
-    fun cancel() {
-        try {
-            mmServerSocket?.close()
-
-        } catch (e: IOException) {
-            Log.d("MyLog", "Could not close the connect socket$e")
-        }
-    }
+//    fun cancel() {
+//        try {
+//            mmServerSocket?.close()
+//
+//        } catch (e: IOException) {
+//            Log.d("MyLog", "Could not close the connect socket$e")
+//        }
+//    }
 }
