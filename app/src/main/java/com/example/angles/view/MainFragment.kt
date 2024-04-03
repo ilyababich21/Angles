@@ -1,7 +1,5 @@
 package com.example.angles.view
 
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,7 +19,7 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater,container,false)
 
@@ -33,12 +31,13 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getCon().observe(viewLifecycleOwner, Observer {
-            binding.conBtn.text = it
+            binding.conBtn.text = if (it) "Connected" else "NotConnected"
         })
         viewModel.getOrient().observe(viewLifecycleOwner, Observer { it?.let {
             binding.pitchValue.text = String.format("%.2f", it.pitch)
             binding.rollValue.text = String.format("%.2f", it.roll)
             binding.yawValue.text = String.format("%.2f", it.yaw)
+            binding.altValue.text = String.format("%.2f", it.alt)
         } })
 //        binding.conBtn
 

@@ -11,7 +11,7 @@ import com.example.angles.service.ServiceRepository
 class MainViewModel(application: Application) : AndroidViewModel(application),ServiceRepository.Listener {
 
     private lateinit var serviceRepository: ServiceRepository
-    private lateinit var isCon: LiveData<String>
+    private lateinit var isCon: LiveData<Boolean>
     private lateinit var orientation: LiveData<Orientation>
     private lateinit var bluetoothRepository: BluetoothRepository
 
@@ -20,7 +20,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application),Se
         try {
             bluetoothRepository = BluetoothRepository(application)
             serviceRepository = ServiceRepository(application,this@MainViewModel)
-            isCon = serviceRepository.getCon()
+            isCon = bluetoothRepository.getCon()
             orientation = serviceRepository.getOrient()
 
         } catch (e: Exception) {
@@ -30,7 +30,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application),Se
 
     }
 
-    fun getCon(): LiveData<String> {
+    fun getCon(): LiveData<Boolean> {
         return isCon
     }
 

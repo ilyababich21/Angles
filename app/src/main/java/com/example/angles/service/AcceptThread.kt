@@ -47,6 +47,7 @@ class AcceptThread(bluetoothAdapter: BluetoothAdapter?) : Thread() {
 
     private fun manageMyConnectedSocket(socket: BluetoothSocket) {
         receiverThread.setSocket(socket)
+        receiverThread.setCon(true)
         receiverThread.start()
     }
 
@@ -54,6 +55,7 @@ class AcceptThread(bluetoothAdapter: BluetoothAdapter?) : Thread() {
     fun cancel() {
         try {
             mmServerSocket?.close()
+
         } catch (e: IOException) {
             Log.d("MyLog", "Could not close the connect socket$e")
         }
